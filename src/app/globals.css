@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0f1a;
+  --background-soft: #0d1422;
+  --surface: #121a2c;
+  --surface-elevated: #1b2438;
+  --border: #253149;
+  --text: #eef2fa;
+  --text-muted: #96a1c2;
+  --text-faint: #636f90;
+
+  --primary: #2dd4bf;
+  --primary-soft: #6ee7d8;
+  --primary-dark: #0f766e;
+
+  --income: #34d399;
+  --income-soft: #86efac;
+  --income-dark: #059669;
+
+  --expense: #fb7185;
+  --expense-soft: #fda4af;
+  --expense-dark: #e11d48;
+
+  --invest: #f5c667;
+  --invest-soft: #fde3a7;
+  --invest-dark: #c9922d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-soft: var(--background-soft);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-dark: var(--primary-dark);
+
+  --color-income: var(--income);
+  --color-income-soft: var(--income-soft);
+  --color-income-dark: var(--income-dark);
+
+  --color-expense: var(--expense);
+  --color-expense-soft: var(--expense-soft);
+  --color-expense-dark: var(--expense-dark);
+
+  --color-invest: var(--invest);
+  --color-invest-soft: var(--invest-soft);
+  --color-invest-dark: var(--invest-dark);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: radial-gradient(circle at 50% -10%, #152235 0%, var(--background) 45%, #05080f 100%);
+  color: var(--text);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+::selection {
+  background: var(--primary);
+  color: #06231f;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+@keyframes rise {
+  0% { transform: translateY(6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.animate-rise {
+  animation: rise 0.25s ease-out;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
